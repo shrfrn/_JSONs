@@ -1,17 +1,17 @@
 const story = {
 	_id: 's101',
-	txt: 'Best trip ever',
+	txt: 'Lake trip with the best 🩷',
 	imgUrl: 'http://some-img',
 	by: {
 		_id: 'u101',
-		fullname: 'Ulash Ulashi',
+		fullname: 'sunflower_power77',
 		imgUrl: 'http://some-img',
 	},
 	loc: {
 		// Optional
 		lat: 11.11,
 		lng: 22.22,
-		name: 'Tel Aviv',
+		name: 'Lake Tahoe, California',
 	},
 	comments: [
 		{
@@ -57,9 +57,9 @@ const story = {
 
 const user = {
 	_id: 'u101',
-	username: 'Muko',
+	username: 'sunflower_power77',
 	password: 'mukmuk',
-	fullname: 'Muki Muka',
+	fullname: 'sunflower_power77 from CA.',
 	imgUrl: 'http://some-img',
 
 	following: [
@@ -83,5 +83,9 @@ const user = {
 // Feed
 
 const loggedinUser = usersCollection.find({ _id: loggedinUser._id })
-const following = loggedinUser.following.map(user => ({ _id: user._id, imgUrl: "..."}))
+const following = loggedinUser.following.map(user => user._id)
 const feed = storiesCollection.find({ 'by._id': { $in: following } }).sort({ _id: -1 })
+
+const myPosts = storiesCollection.find({ 'by._id': loggedinUser._id }).sort({ _id: -1 })
+
+

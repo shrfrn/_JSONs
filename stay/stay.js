@@ -55,7 +55,7 @@ const orders = [
 			// mini-stay
 			_id: 'h102',
 			name: 'House Of Uncle My',
-			price: 80.0,
+			imgUrl: 'first img url (or more...)',
 		},
 		msgs: [], // host - guest chat
 		status: 'pending', // approved / rejected
